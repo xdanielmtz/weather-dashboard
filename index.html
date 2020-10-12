@@ -24,17 +24,24 @@
       
       <div class="container">
         <div class = "row">
-              <div class="col-sm-4">
+              <div class="col-sm-3">
             <section>
               <h4>Search for a city:</h4>
               <form class="example" action="action_page.php">
-                <input type="text" placeholder="Search.." name="search">
+                <input type="text" id="cityInput" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
               </form>
             </section>
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-9" id="infoContainer">
             <h1>City Name</h1>
+            <p>Temperature: </p>
+            <p>Humidity: </p>
+            <p>Wind Speed: </p>
+            <p>UV Index: </p>
+          </div>
+          <div class="col-sm-9" id="fiveDay">
+            <h1>5-Day Forecast: </h1>
           </div>
         </div>
       </div>

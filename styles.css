@@ -6,7 +6,20 @@
 
 section{
     border: 2px solid rgb(219, 226, 228); border-radius: 5px;
-    height: 70rem;
-    background-color: rgb(219, 226, 228);
+    height: 45rem;
+    background-color: rgb(223, 226, 226);
+}
+
+#infoContainer{
+    border: 2px solid rgb(219, 226, 228); border-radius: 5px;
+    background-color:rgb(223, 226, 226);
+    height:20rem;
+}
+
+#fiveDay{
+    border: 2px solid rgb(219, 226, 228); border-radius: 5px;
+    background-color: rgb(223, 226, 226);
+    right: -18rem;
+    margin-top: -24rem
 }
 
