@@ -1,12 +1,15 @@
+// city temp properties:
 var cityH1 = $("#theCityName");
+var tempEL = $("#temp");
+var humEL = $("#hum");
+var windEL = $("#wind");
+var uvEl = $("#uvi");
 
 
 function cityName(){
     $( "#searchBtn" ).click(function( event ) {
     event.preventDefault();
-    console.log("hey");
     var theCity = $("#cityInput").val();
-    console.log(theCity); 
     cityH1.text(theCity);
     var APIKey = "166a433c57516f51dfab1f7edaed8413";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + theCity + "&units=imperial&appid=" + APIKey;
@@ -15,8 +18,18 @@ function cityName(){
       url: queryURL,
       method: "GET"
    }).then(function(response){
-     console.log(response);        
+     console.log(response);
+     tempEL.text("Temperature: "+ (response.main.temp) + " ºF");        
+     humEL.text("Humidity: "+ (response.main.humidity) + " %");
+     windEL.text("Wind Speed: " + (response.wind.speed) + " MPH");
+    //  uvEl.text("UV Index: " + (response.))
+     var lat = (response.coord.lat);
+     console.log(lat);
    })
+
+
+
+
     });
 
   
