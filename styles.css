@@ -1,21 +1,25 @@
+/* styles my header */
 #firstRow{
     background-color: rgb(78, 155, 155);
     color:#eee;
     padding:.5rem;
 }
 
+/* styles my city search section */
 section{
     border: 2px solid rgb(219, 226, 228); border-radius: 5px;
     height: 45rem;
     background-color: rgb(223, 226, 226);
 }
 
+/* styles my city info section */
 #infoContainer{
     border: 2px solid rgb(219, 226, 228); border-radius: 5px;
     background-color:rgb(223, 226, 226);
     height:20rem;
 }
 
+/* styles my five day forecast section  */
 #fiveDay{
     border: 2px solid rgb(219, 226, 228); border-radius: 5px;
     background-color: rgb(223, 226, 226);
@@ -23,6 +27,7 @@ section{
     margin-top: -24rem
 }
 
+/* styles my 5 forecast blocks */
 .btn-primary{
     margin-right: 2rem;
 }
