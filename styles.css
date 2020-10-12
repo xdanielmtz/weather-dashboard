@@ -1,5 +1,12 @@
-.row{
+#firstRow{
     background-color: rgb(78, 155, 155);
     color:#eee;
     padding:.5rem;
 }
+
+section{
+    border: 2px solid rgb(219, 226, 228); border-radius: 5px;
+    height: 70rem;
+    background-color: rgb(219, 226, 228);
+}
+

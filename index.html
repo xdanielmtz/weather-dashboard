@@ -10,16 +10,35 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-      <div class="row text-center">
+      <div class="row text-center" id="firstRow">
           <div class="col-sm-12">
              <h1>
                  Weather Dashboard
              </h1>
          </div>
       </div>
+      
+      <div class="container">
+        <div class = "row">
+              <div class="col-sm-4">
+            <section>
+              <h4>Search for a city:</h4>
+              <form class="example" action="action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </form>
+            </section>
+          </div>
+          <div class="col-sm-8">
+            <h1>City Name</h1>
+          </div>
+        </div>
+      </div>
+
 
 
 
@@ -28,5 +47,28 @@
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+
+
+      function cityName(theCity){
+        // var theCity = "Atlanta";
+        var APIKey = "166a433c57516f51dfab1f7edaed8413";
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + theCity + "&units=imperial&appid=" + APIKey;
+
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+       }).then(function(response){
+         console.log(response);        
+       })
+
+      }
+      
+      cityName("Atlanta");
+
+
+
+
+    </script>
   </body>
 </html>
