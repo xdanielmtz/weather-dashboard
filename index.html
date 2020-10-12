@@ -29,7 +29,7 @@
               <h4>Search for a city:</h4>
               <form class="example" action="action_page.php">
                 <input type="text" id="cityInput" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <button type="submit" id="searchBtn"><i class="fa fa-search"></i></button>
               </form>
             </section>
           </div>
@@ -56,9 +56,14 @@
     ></script>
     <script type="text/javascript">
 
+      
 
-      function cityName(theCity){
-        // var theCity = "Atlanta";
+      function cityName(){
+        $( "#searchBtn" ).click(function( event ) {
+        event.preventDefault();
+        console.log("hey");
+        var theCity = $("#cityInput").val();
+        console.log(theCity); 
         var APIKey = "166a433c57516f51dfab1f7edaed8413";
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + theCity + "&units=imperial&appid=" + APIKey;
 
@@ -68,10 +73,12 @@
        }).then(function(response){
          console.log(response);        
        })
+        });
 
+      
       }
       
-      cityName("Atlanta");
+      cityName();
 
 
 
