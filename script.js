@@ -10,7 +10,6 @@ function cityName(){
     $( "#searchBtn" ).click(function( event ) {
     event.preventDefault();
     var theCity = $("#cityInput").val();
-    cityH1.text(theCity);
     var APIKey = "166a433c57516f51dfab1f7edaed8413";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + theCity + "&units=imperial&appid=" + APIKey;
    
@@ -20,6 +19,7 @@ function cityName(){
       method: "GET"
    }).then(function(response){
      console.log(response);
+     cityH1.text(theCity);
      tempEL.text("Temperature: "+ (response.main.temp) + " ºF");        
      humEL.text("Humidity: "+ (response.main.humidity) + " %");
      windEL.text("Wind Speed: " + (response.wind.speed) + " MPH");
