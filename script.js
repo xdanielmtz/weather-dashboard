@@ -21,11 +21,6 @@ var dateTwo = $("#dateTwo");
 var dateThree = $("#dateThree");
 var dateFour = $("#dateFour");
 var dateFive = $("#dateFive");
-var logoOne = $("#logoOne")
-var logoTwo = $("#logoTwo")
-var logoThree = $("#logoThree")
-var logoFour = $("#logoFour")
-var logoFive = $("#logoFive")
 
 // const ul = document.querySelector("ul")
 // const form = document.querySelector("form")
@@ -74,12 +69,15 @@ function cityName(
       method: "GET"
    }).then(function(response){
      console.log(response);
-     cityH1.text((theCity) + " " + newM) ;
+     var lat = (response.coord.lat);
+     var lon = (response.coord.lon);
+     var topIcon = (response.weather[0].icon)
+
+     cityH1.text((theCity) + " " + newM);
+     $("#mainIcon").prepend($("<img>",{id:"theImg",src:"http://openweathermap.org/img/wn/" + topIcon + "@2x.png"}))
      tempEL.text("Temperature: "+ (response.main.temp) + " ºF");        
      humEL.text("Humidity: "+ (response.main.humidity) + " %");
      windEL.text("Wind Speed: " + (response.wind.speed) + " MPH");
-     var lat = (response.coord.lat);
-     var lon = (response.coord.lon);
      
      
 
@@ -88,6 +86,7 @@ function cityName(
          url: queryURLTwo,
          method: "GET"
      }).then(function(response){
+         console.log(response);
          uvEl.text("UV Index: " + (response.value));
 
      })
