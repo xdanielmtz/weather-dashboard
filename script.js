@@ -74,14 +74,14 @@ function cityName(
      var topIcon = (response.weather[0].icon)
 
      cityH1.text((theCity) + " " + newM);
-     $("#mainIcon").prepend($("<img>",{id:"theImg",src:"http://openweathermap.org/img/wn/" + topIcon + "@2x.png"}))
+     $("#mainIcon").prepend($("<img>",{id:"theImg",src:"https://openweathermap.org/img/wn/" + topIcon + "@2x.png"}))
      tempEL.text("Temperature: "+ (response.main.temp) + " ºF");        
      humEL.text("Humidity: "+ (response.main.humidity) + " %");
      windEL.text("Wind Speed: " + (response.wind.speed) + " MPH");
      
      
 
-     var queryURLTwo = "http://api.openweathermap.org/data/2.5/uvi?" + "lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
+     var queryURLTwo = "https://api.openweathermap.org/data/2.5/uvi?" + "lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
      $.ajax({
          url: queryURLTwo,
          method: "GET"
@@ -92,7 +92,7 @@ function cityName(
      })
 
 
-     var queryURLThree = "http://api.openweathermap.org/data/2.5/forecast?q=" + theCity + "&units=imperial&appid=" + APIKey;
+     var queryURLThree = "https://api.openweathermap.org/data/2.5/forecast?q=" + theCity + "&units=imperial&appid=" + APIKey;
      $.ajax({
          url: queryURLThree,
          method: "GET"
@@ -118,11 +118,11 @@ function cityName(
         var iconThree = (response.list[26].weather[0].icon)
         var iconFour = (response.list[34].weather[0].icon)
         var iconFive = (response.list[36].weather[0].icon)
-        $("#logoOne").prepend($("<img>",{id:"theImg",src:"http://openweathermap.org/img/wn/" + icon + "@2x.png"}))
-        $("#logoTwo").prepend($("<img>",{id:"theImg",src:"http://openweathermap.org/img/wn/" + iconTwo + "@2x.png"}))
-        $("#logoThree").prepend($("<img>",{id:"theImg",src:"http://openweathermap.org/img/wn/" + iconThree + "@2x.png"}))
-        $("#logoFour").prepend($("<img>",{id:"theImg",src:"http://openweathermap.org/img/wn/" + iconFour + "@2x.png"}))
-        $("#logoFive").prepend($("<img>",{id:"theImg",src:"http://openweathermap.org/img/wn/" + iconFive + "@2x.png"}))
+        $("#logoOne").prepend($("<img>",{id:"theImg",src:"https://openweathermap.org/img/wn/" + icon + "@2x.png"}))
+        $("#logoTwo").prepend($("<img>",{id:"theImg",src:"https://openweathermap.org/img/wn/" + iconTwo + "@2x.png"}))
+        $("#logoThree").prepend($("<img>",{id:"theImg",src:"https://openweathermap.org/img/wn/" + iconThree + "@2x.png"}))
+        $("#logoFour").prepend($("<img>",{id:"theImg",src:"https://openweathermap.org/img/wn/" + iconFour + "@2x.png"}))
+        $("#logoFive").prepend($("<img>",{id:"theImg",src:"https://openweathermap.org/img/wn/" + iconFive + "@2x.png"}))
 
      })
 
