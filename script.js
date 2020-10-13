@@ -5,6 +5,22 @@ var humEL = $("#hum");
 var windEL = $("#wind");
 var uvEl = $("#uvi");
 
+// 5 day forecast variables
+var tempDayOne = $("#tempDayOne");
+var tempDayTwo = $("#tempDayTwo")
+var tempDayThree = $("#tempDayThree")
+var tempDayFour = $("#tempDayFour")
+var tempDayFive = $("#tempDayFive")
+var humDayOne = $("#humDayOne");
+var humDayTwo = $("#humDayTwo");
+var humDayThree = $("#humDayThree");
+var humDayFour = $("#humDayFour");
+var humDayFive = $("#humDayFive"); 
+
+
+let citiesArray = localStorage.getItem("cities")
+  ? JSON.parse(localStorage.getItem("cities"))
+  : []
 
 function cityName(){
     $( "#searchBtn" ).click(function( event ) {
@@ -12,7 +28,7 @@ function cityName(){
     var theCity = $("#cityInput").val();
     var APIKey = "166a433c57516f51dfab1f7edaed8413";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + theCity + "&units=imperial&appid=" + APIKey;
-   
+    
 
     $.ajax({
       url: queryURL,
@@ -36,11 +52,26 @@ function cityName(){
 
      })
 
+
+     var queryURLThree = "http://api.openweathermap.org/data/2.5/forecast?q=" + theCity + "&units=imperial&appid=" + APIKey;
+     $.ajax({
+         url: queryURLThree,
+         method: "GET"
+     }).then(function(response){
+         console.log(response);
+        tempDayOne.text("Temp: " + (response.list[6].main.temp) + " ºF");
+        tempDayTwo.text("Temp: " + (response.list[14].main.temp) + " ºF");
+        tempDayThree.text("Temp: " + (response.list[22].main.temp) + " ºF");
+        tempDayFour.text("Temp: " + (response.list[30].main.temp) + " ºF");
+        tempDayFive.text("Temp: " + (response.list[38].main.temp) + " ºF");
+        humDayOne.text("Humidity: " + (response.list[6].main.humidity) + "%")
+        humDayTwo.text("Humidity: " + (response.list[14].main.humidity) + "%")
+        humDayThree.text("Humidity: " + (response.list[22].main.humidity) + "%")
+        humDayFour.text("Humidity: " + (response.list[30].main.humidity) + "%")
+        humDayFive.text("Humidity: " + (response.list[38].main.humidity) + "%")
+     })
+
     })
-
-    
-
-
    });
   
   }
