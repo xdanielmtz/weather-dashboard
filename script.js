@@ -26,6 +26,7 @@ var logoTwo = $("#logoTwo")
 var logoThree = $("#logoThree")
 var logoFour = $("#logoFour")
 var logoFive = $("#logoFive")
+
 // const ul = document.querySelector("ul")
 // const form = document.querySelector("form")
 // const input = document.getElementById("cityInput")
@@ -54,8 +55,8 @@ var logoFive = $("#logoFive")
 //         liMaker(item)
 //     })
 
-    
-
+var m = moment();   
+var newM = m.format("dddd MMM Mo YYYY");
 
 
 
@@ -73,7 +74,7 @@ function cityName(
       method: "GET"
    }).then(function(response){
      console.log(response);
-     cityH1.text(theCity);
+     cityH1.text((theCity) + " " + newM) ;
      tempEL.text("Temperature: "+ (response.main.temp) + " ºF");        
      humEL.text("Humidity: "+ (response.main.humidity) + " %");
      windEL.text("Wind Speed: " + (response.wind.speed) + " MPH");
