@@ -87,8 +87,18 @@ function cityName(
          method: "GET"
      }).then(function(response){
          console.log(response);
-         uvEl.text("UV Index: " + (response.value));
-
+         var UvNum = (response.value)
+         console.log(UvNum);
+         uvEl.text("UV Index: " + (UvNum));
+            if (UvNum <= 2) {
+               uvEl.css("background-color", "green"); 
+            }
+            if (UvNum >= 5){
+                uvEl.css("background-color", "yellow"); 
+            }
+            if (UvNum > 7){
+                uvEl.css("background-color", "red"); 
+            }
      })
 
 
