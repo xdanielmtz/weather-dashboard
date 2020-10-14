@@ -29,7 +29,9 @@ Follow these steps to view my project!
 You will search a city and then will be presented with current and future conditions for that city.
 WHEN you view the current weather conditions for that city
 THEN you will be presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity,
-the wind speed, and the UV index.
+the wind speed, and the UV index. 
+WHEN you view the UV index, you will be presented with a color that indicates whether the conditions are favorable, moderate, or severe.
+WHEN you view future weather conditions for that city, THEN  you will be presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity. 
 
 
 
@@ -39,4 +41,4 @@ the wind speed, and the UV index.
 
 
 ## Sneak Peak:
-![Main Page](work-day-scheduler.png) 
+![Main Page](weather-dashboard.png) 
