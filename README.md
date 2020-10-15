@@ -37,7 +37,7 @@ WHEN you view future weather conditions for that city, THEN  you will be present
 
 
 ## Deployed Site Link:
-(Work Day Scheduler) https://xdanielmtz.github.io/work-day-scheduler/
+(Work Day Scheduler) https://xdanielmtz.github.io/weather-dashboard/
 
 
 ## Sneak Peak:
